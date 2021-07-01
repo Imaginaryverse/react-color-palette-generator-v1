@@ -41,3 +41,15 @@
   height: 60px;
   width: 60px;
 }
+
+/* DETAILS */
+.details-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-list-item__color-preview {
+  height: 150px;
+  width: 150px;
+}
