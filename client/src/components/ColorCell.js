@@ -4,7 +4,7 @@ const toHslString = (h, s, l) => `hsl(${h}, ${s}%, ${l}%)`;
 
 const isDark = rgbArr => rgbArr.every(val => val < 180);
 
-const ColorCell = ({ color }) => {
+const ColorCell = ({ color, toggleLocked }) => {
   const name = color.color.name;
   const hex = color.color.hex;
   const hsl = color.color.hsl;
@@ -17,6 +17,12 @@ const ColorCell = ({ color }) => {
 
   return (
     <div className='color-cell' style={bgStyle}>
+      <button
+        className='btn toggle-locked-btn'
+        onClick={() => toggleLocked(color.num)}
+      >
+        {color.locked ? 'Unlock' : 'Lock'}
+      </button>
       <p style={textStyle}>{name}</p>
       <p style={textStyle}>{hex}</p>
     </div>
