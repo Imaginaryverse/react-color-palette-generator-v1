@@ -19,13 +19,15 @@ const PaletteDetails = () => {
 
   return (
     <section className='page palette-details-page'>
-      <h1>{palette.name ? palette.name : ''}</h1>
+      <h1 className='palette-details-title'>
+        {palette.name ? palette.name : ''}
+      </h1>
       {palette ? (
         <ul className='details-list'>
           {palette.colors.map(color => (
             <li className='details-list-item' key={color.name}>
               <div className='details-list-item__info'>
-                <p>Name: {color.name}</p>
+                <p className='color-name'>{color.name}</p>
                 <p>Hex: {color.hex}</p>
                 <p>HSL: {toHslString(color.hsl.h, color.hsl.s, color.hsl.l)}</p>
                 <p>RGB: {toRgbString(color.rgb.r, color.rgb.g, color.rgb.b)}</p>

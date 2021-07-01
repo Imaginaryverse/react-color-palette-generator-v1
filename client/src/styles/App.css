@@ -29,19 +29,16 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: gray;
+  background-color: white;
 }
 
 .App {
   height: 100vh;
-  max-height: 1621px;
   width: 100vw;
-  max-width: 768px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: aliceblue;
 }
 
 .page {
@@ -104,6 +101,7 @@ body {
 .palette-generator {
   height: 100%;
   width: 100%;
+  max-width: 768px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -113,6 +111,7 @@ body {
   height: 60px;
   width: 100%;
   padding: 0 4rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,6 +156,7 @@ body {
 .palette-generator .color-cell .info-container {
   height: 100%;
   width: 150px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -185,14 +185,18 @@ body {
 }
 
 /* PALETTES LIST */
+.palettes-page {
+  overflow-y: scroll;
+}
+
 .palettes-list {
   height: 100%;
   width: 100%;
+  max-width: 768px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow-y: scroll;
 }
 .palettes-list__item {
   min-height: 125px;
@@ -200,15 +204,17 @@ body {
   width: 100%;
   padding: 0.75rem 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .palettes-list .palette-info-container {
+  height: 100%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 .palettes-list .palette-info-container__name {
   margin-bottom: 0.5rem;
@@ -236,4 +242,49 @@ body {
 }
 .palettes-list .palette-preview-link .palette-preview .preview-grid__cell {
   width: 100%;
+}
+
+/* PALETTE DETAIL */
+.palettte-details-page {
+  overflow-y: scroll;
+}
+
+.palette-details-title {
+  margin-bottom: 0.5rem;
+}
+
+.details-list {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.details-list .details-list-item {
+  height: 100%;
+  min-height: 125px;
+  max-height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details-list .details-list-item__info {
+  height: 100%;
+  width: 100%;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details-list .details-list-item__info .color-name {
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+}
+.details-list .details-list-item__color-preview {
+  height: 100%;
+  width: 60%;
 }/*# sourceMappingURL=App.css.map */
