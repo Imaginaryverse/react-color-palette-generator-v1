@@ -8,6 +8,7 @@ const PaletteGenerator = () => {
   const { addPalette } = useContext(PalettesContext);
   const [palette, setPalette] = useState(null);
   const [paletteName, setPaletteName] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const generateNewColors = async () => {
     const newColors = await Promise.all(
@@ -20,14 +21,15 @@ const PaletteGenerator = () => {
         return color;
       })
     );
-
     return newColors;
   };
 
   const handleGenerateClick = async () => {
+    setIsGenerating(true);
     const newColors = await generateNewColors();
 
     setPalette(newColors);
+    setIsGenerating(false);
   };
 
   const handleSaveClick = e => {
@@ -57,6 +59,7 @@ const PaletteGenerator = () => {
 
   useEffect(() => {
     if (!palette) {
+      setIsGenerating(true);
       async function generatePalette() {
         const list = [];
         for (let i = 0; i < 5; i++) {
@@ -69,6 +72,7 @@ const PaletteGenerator = () => {
           list.push(clr);
         }
         setPalette(list);
+        setIsGenerating(false);
       }
       generatePalette();
     }
@@ -85,7 +89,12 @@ const PaletteGenerator = () => {
           placeholder='Palette name'
           required
         />
-        <input className='btn save-btn' type='submit' value='Save' />
+        <input
+          className='btn save-btn'
+          type='submit'
+          value='Save'
+          disabled={isGenerating}
+        />
       </form>
       <div className='palette-grid'>
         {palette
@@ -101,6 +110,7 @@ const PaletteGenerator = () => {
       <button
         className='btn generate-btn'
         onClick={() => handleGenerateClick()}
+        disabled={isGenerating}
       >
         Generate
       </button>
