@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUnlock, faLock } from '@fortawesome/free-solid-svg-icons';
 
 const toHslString = (h, s, l) => `hsl(${h}, ${s}%, ${l}%)`;
 
@@ -21,7 +23,11 @@ const ColorCell = ({ color, toggleLocked }) => {
         className='btn toggle-locked-btn'
         onClick={() => toggleLocked(color.num)}
       >
-        {color.locked ? 'Unlock' : 'Lock'}
+        {color.locked ? (
+          <FontAwesomeIcon icon={faLock} />
+        ) : (
+          <FontAwesomeIcon icon={faUnlock} />
+        )}
       </button>
       <div className='info-container'>
         <p className='info-container__name' style={textStyle}>

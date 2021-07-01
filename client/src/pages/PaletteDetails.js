@@ -7,7 +7,7 @@ const toHslString = (h, s, l) => {
 };
 
 const toRgbString = (r, g, b) => {
-  return `${r}, ${g}, ${b},`;
+  return `${r}, ${g}, ${b}`;
 };
 
 const PaletteDetails = () => {

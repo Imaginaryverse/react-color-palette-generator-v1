@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap");
+/* COLORS */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -54,7 +55,11 @@ body {
 .btn {
   padding: 0 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+}
+.btn:disabled {
+  opacity: 0.5;
+  filter: grayscale(100);
 }
 
 /* NAVBAR */
@@ -87,7 +92,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  color: black;
+  color: #2b303a;
   text-decoration: none;
   border-radius: 10px;
   background-color: transparent;
@@ -111,7 +116,9 @@ body {
   height: 60px;
   width: 100%;
   margin-bottom: 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bolder;
   color: green;
 }
@@ -129,15 +136,27 @@ body {
   width: 100%;
   max-width: 425px;
   padding-left: 0.5rem;
+  outline: none;
   border: 2px solid black;
   border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.palette-generator .palette-form__input:focus {
+  border-color: #3789fb;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 .palette-generator .palette-form .save-btn {
   height: 35px;
   padding: 0 0.5rem;
   margin-left: 0.5rem;
-  border: 2px solid black;
+  color: #fffefa;
+  background-color: #4c9f70;
+  border: 2px solid #2b303a;
   border-radius: 5px;
+}
+.palette-generator .palette-form .save-btn:hover {
+  background-color: #68b68a;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 .palette-generator .palette-grid {
   height: 100%;
@@ -156,10 +175,19 @@ body {
   align-items: center;
 }
 .palette-generator .color-cell .toggle-locked-btn {
-  padding: 0.25rem 0.5rem;
+  height: 35px;
+  width: 35px;
   margin-left: 1.5rem;
-  border: 2px solid black;
-  border-radius: 5px;
+  color: #2b303a;
+  font-size: 1.15rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+.palette-generator .color-cell .toggle-locked-btn:hover {
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 .palette-generator .color-cell .info-container {
   height: 100%;
@@ -188,8 +216,14 @@ body {
 }
 .palette-generator .generator-btn-container .generate-btn {
   height: 45px;
-  border: 2px solid black;
+  color: #fffefa;
+  background-color: #1172fa;
+  border: 2px solid #2b303a;
   border-radius: 5px;
+}
+.palette-generator .generator-btn-container .generate-btn:hover {
+  background-color: #3789fb;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* PALETTES LIST */
@@ -222,10 +256,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 .palettes-list .palette-info-container__name {
   margin-bottom: 0.5rem;
+}
+.palettes-list .palette-info-container .delete-btn {
+  height: 35px;
+  width: 35px;
+  font-size: 1.1rem;
+  color: #d64933;
+  background-color: transparent;
+  border: 2px solid #d64933;
+  border-radius: 5px;
+}
+.palettes-list .palette-info-container .delete-btn:hover {
+  color: #fffefa;
+  background-color: #dd6755;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 .palettes-list .palette-preview-link {
   height: 100%;
@@ -233,12 +281,12 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
 }
 .palettes-list .palette-preview-link:hover {
-  transform: scale(1.025);
   border-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
 }
 .palettes-list .palette-preview-link .palette-preview {
   height: 100%;
@@ -262,12 +310,13 @@ body {
 }
 
 .details-list {
-  height: 100%;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .details-list .details-list-item {
   height: 100%;

@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { PalettesContext } from '../PalettesContext';
 import PalettePreview from '../components/PalettePreview';
 
@@ -19,7 +21,7 @@ const Palettes = () => {
                   className='btn delete-btn'
                   onClick={() => deletePalette(palette.id)}
                 >
-                  Delete
+                  <FontAwesomeIcon icon={faTrash} />
                 </button>
               </div>
               <Link
