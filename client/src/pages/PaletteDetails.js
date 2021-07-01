@@ -18,7 +18,7 @@ const PaletteDetails = () => {
   console.log(palette);
 
   return (
-    <section className='palette-details-page'>
+    <section className='page palette-details-page'>
       <h1>{palette.name ? palette.name : ''}</h1>
       {palette ? (
         <ul className='details-list'>

@@ -7,7 +7,7 @@ const Palettes = () => {
   const { palettes, deletePalette } = useContext(PalettesContext);
 
   return (
-    <div>
+    <section className='page palettes-page'>
       <h1>Palettes</h1>
       {palettes[0] ? (
         <ul className='palettes-list'>
@@ -34,7 +34,7 @@ const Palettes = () => {
           </Link>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 
