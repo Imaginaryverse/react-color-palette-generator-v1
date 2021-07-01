@@ -13,12 +13,24 @@
   width: 150px;
 }
 
-.palette-preview {
+.palettes-list {
+  max-width: 50vw;
+  list-style: none;
+  border: 1px solid red;
+}
+
+.palettes-list__item {
   display: flex;
   justify-content: center;
   align-items: center;
 
   border: 1px solid black;
+}
+
+.palette-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .preview-grid {

@@ -1,24 +1,30 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { PalettesContext } from '../PalettesContext';
 import PalettePreview from '../components/PalettePreview';
 
 const Palettes = () => {
-  const { palettes } = useContext(PalettesContext);
-
-  useEffect(() => {
-    console.log(palettes);
-  }, [palettes]);
+  const { palettes, deletePalette } = useContext(PalettesContext);
 
   return (
     <div>
       <h1>Palettes</h1>
       {palettes[0] ? (
-        palettes.map(palette => (
-          <Link to={`/palettes/${palette.id}`} key={palette.id}>
-            <PalettePreview palette={palette} />
-          </Link>
-        ))
+        <ul className='palettes-list'>
+          {palettes.map(palette => (
+            <li className='palettes-list__item' key={palette.id}>
+              <Link to={`/palettes/${palette.id}`}>
+                <PalettePreview palette={palette} />
+              </Link>
+              <button
+                className='btn delete-btn'
+                onClick={() => deletePalette(palette.id)}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
       ) : (
         <div>
           <p>Looks like you don't have any palettes yet...</p>
@@ -28,8 +34,6 @@ const Palettes = () => {
           </Link>
         </div>
       )}
-      {/* <Link to='/palettes/2'>2</Link>
-      <Link to='/palettes/999'>999</Link> */}
     </div>
   );
 };

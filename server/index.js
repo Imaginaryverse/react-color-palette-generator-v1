@@ -23,9 +23,6 @@ app.get('/api', (req, res) => {
 
 app.get('/api/palettes', async (req, res) => {
   const palettes = await getPalettes();
-
-  console.log(palettes);
-
   res.json({ palettes });
 });
 
@@ -39,12 +36,23 @@ app.post('/api/palettes', async (req, res) => {
   const palettes = await getPalettes();
   palettes.push(palette);
 
-  console.log(palettes);
-
   await fs.writeFile('./db/palettes.json', JSON.stringify(palettes));
 
   res.json({ palettes });
   return;
+});
+
+app.delete('/api/palettes', async (req, res) => {
+  console.log('DELETE', req.body.id);
+
+  const id = req.body.id;
+
+  const palettes = await getPalettes();
+  const updatedPalettes = palettes.filter(palette => palette.id !== id);
+
+  await fs.writeFile('./db/palettes.json', JSON.stringify(updatedPalettes));
+
+  res.json({ updatedPalettes });
 });
 
 app.listen(PORT, () => console.log(`Server running on localhost:${PORT}`));
