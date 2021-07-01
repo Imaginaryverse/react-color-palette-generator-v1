@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { PalettesContext } from '../PalettesContext';
 import generateColor from '../utils/generateColor';
 import ColorCell from './ColorCell';
 
 const PaletteGenerator = () => {
+  const { addPalette } = useContext(PalettesContext);
   const [palette, setPalette] = useState(null);
 
   const generateNewColors = async () => {
@@ -24,6 +26,16 @@ const PaletteGenerator = () => {
     const newColors = await generateNewColors();
 
     setPalette(newColors);
+  };
+
+  const handleSaveClick = () => {
+    const paletteToSave = {
+      name: 'paletteTitle',
+      id: 'uuid',
+      date: new Date().toLocaleString(),
+      colors: palette.map(color => color.color),
+    };
+    addPalette(paletteToSave);
   };
 
   const toggleLocked = num => {
@@ -76,6 +88,7 @@ const PaletteGenerator = () => {
       >
         Generate
       </button>
+      <button onClick={() => handleSaveClick()}>Save</button>
     </section>
   );
 };

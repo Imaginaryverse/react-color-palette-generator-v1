@@ -8,7 +8,9 @@ export const PalettesProvider = props => {
   const [palettes, setPalettes] = useState(null);
 
   const addPalette = palette => {
-    axios.post('/api/palettes', palette).then(res => console.log(res.data.msg));
+    console.log('in context', palette);
+
+    // axios.post('/api/palettes', palette).then(res => console.log(res.data.msg));
   };
 
   useEffect(() => {
