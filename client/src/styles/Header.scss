@@ -1,0 +1,12 @@
+.header {
+  height: 8vmin;
+  min-height: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 8vmin;
+  }
+}

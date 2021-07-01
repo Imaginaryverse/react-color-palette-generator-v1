@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { PalettesContext } from '../PalettesContext';
 import generateColor from '../utils/generateColor';
 import ColorCell from './ColorCell';
+import '../styles/PaletteGenerator.css';
 
 const PaletteGenerator = () => {
   const { addPalette } = useContext(PalettesContext);

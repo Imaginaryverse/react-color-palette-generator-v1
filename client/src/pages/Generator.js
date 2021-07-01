@@ -1,10 +1,11 @@
 import React from 'react';
 import PaletteGenerator from '../components/PaletteGenerator';
+import '../styles/GeneratorPage.css';
 
 const Generator = () => {
   return (
     <section className='page generator-page'>
-      <h1>Generator</h1>
+      {/* <h1>Generator</h1> */}
       <PaletteGenerator />
     </section>
   );
