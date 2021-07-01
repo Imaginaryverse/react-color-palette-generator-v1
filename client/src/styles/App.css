@@ -94,7 +94,7 @@ body {
   transition: background-color 0.2s ease;
 }
 .navbar .navbar-list-item__link:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(80, 80, 80, 0.1);
 }
 
 /* PALETTE GENERATOR */
@@ -106,6 +106,14 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+.palette-generator .saved-message {
+  height: 60px;
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bolder;
+  color: green;
 }
 .palette-generator .palette-form {
   height: 60px;

@@ -9,6 +9,7 @@ const PaletteGenerator = () => {
   const [palette, setPalette] = useState(null);
   const [paletteName, setPaletteName] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isSaved, setisSaved] = useState(false);
 
   const generateNewColors = async () => {
     const newColors = await Promise.all(
@@ -32,6 +33,13 @@ const PaletteGenerator = () => {
     setIsGenerating(false);
   };
 
+  const displaySavingMessage = () => {
+    setisSaved(true);
+    setTimeout(() => {
+      setisSaved(false);
+    }, 2000);
+  };
+
   const handleSaveClick = e => {
     e.preventDefault();
 
@@ -43,6 +51,8 @@ const PaletteGenerator = () => {
     };
     addPalette(paletteToSave);
     setPaletteName('');
+
+    displaySavingMessage();
   };
 
   const toggleLocked = num => {
@@ -80,23 +90,27 @@ const PaletteGenerator = () => {
 
   return (
     <section className='palette-generator'>
-      <form className='palette-form' onSubmit={e => handleSaveClick(e)}>
-        <input
-          className='palette-form__input'
-          type='text'
-          maxLength='25'
-          value={paletteName}
-          onChange={e => setPaletteName(e.target.value)}
-          placeholder='Palette name'
-          required
-        />
-        <input
-          className='btn save-btn'
-          type='submit'
-          value='Save'
-          disabled={isGenerating}
-        />
-      </form>
+      {isSaved ? (
+        <p className='saved-message'>Saved!</p>
+      ) : (
+        <form className='palette-form' onSubmit={e => handleSaveClick(e)}>
+          <input
+            className='palette-form__input'
+            type='text'
+            maxLength='25'
+            value={paletteName}
+            onChange={e => setPaletteName(e.target.value)}
+            placeholder='Palette name'
+            required
+          />
+          <input
+            className='btn save-btn'
+            type='submit'
+            value='Save'
+            disabled={isGenerating}
+          />
+        </form>
+      )}
       <div className='palette-grid'>
         {palette
           ? palette.map(color => (
