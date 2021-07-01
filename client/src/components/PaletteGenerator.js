@@ -7,6 +7,7 @@ import ColorCell from './ColorCell';
 const PaletteGenerator = () => {
   const { addPalette } = useContext(PalettesContext);
   const [palette, setPalette] = useState(null);
+  const [paletteName, setPaletteName] = useState('');
 
   const generateNewColors = async () => {
     const newColors = await Promise.all(
@@ -29,14 +30,17 @@ const PaletteGenerator = () => {
     setPalette(newColors);
   };
 
-  const handleSaveClick = () => {
+  const handleSaveClick = e => {
+    e.preventDefault();
+
     const paletteToSave = {
-      name: 'paletteTitle',
+      name: paletteName,
       id: uuidv4(),
       date: new Date().toLocaleString(),
       colors: palette.map(color => color.color),
     };
     addPalette(paletteToSave);
+    setPaletteName('');
   };
 
   const toggleLocked = num => {
@@ -72,6 +76,17 @@ const PaletteGenerator = () => {
 
   return (
     <section className='palette-generator'>
+      <form className='palette-form' onSubmit={e => handleSaveClick(e)}>
+        <input
+          className='palette-form__input'
+          type='text'
+          value={paletteName}
+          onChange={e => setPaletteName(e.target.value)}
+          placeholder='Palette name'
+          required
+        />
+        <input className='btn save-btn' type='submit' value='Save' />
+      </form>
       <div className='palette-grid'>
         {palette
           ? palette.map(color => (
@@ -89,7 +104,6 @@ const PaletteGenerator = () => {
       >
         Generate
       </button>
-      <button onClick={() => handleSaveClick()}>Save</button>
     </section>
   );
 };
