@@ -43,7 +43,7 @@ app.post('/api/palettes', async (req, res) => {
 
   await fs.writeFile('./db/palettes.json', JSON.stringify(palettes));
 
-  res.json({ msg: 'OK! Palette added' });
+  res.json({ msg: `OK! Added ${palette.name}` });
   return;
 });
 

@@ -1,1 +1,76 @@
-[]
+[
+  {
+    "name": "Hello",
+    "id": "2fa698af-5ad1-458d-b2f3-886644f2a18d",
+    "date": "01/07/2021, 14:13:11",
+    "colors": [
+      {
+        "name": "Chestnut Plum",
+        "hex": "#7e3015",
+        "hsl": { "h": 15, "s": 71, "l": 29 },
+        "rgb": { "r": 133, "g": 46, "b": 25 }
+      },
+      {
+        "name": "Crystal Rapids",
+        "hex": "#b4e9ce",
+        "hsl": { "h": 149, "s": 54, "l": 81 },
+        "rgb": { "r": 178, "g": 228, "b": 208 }
+      },
+      {
+        "name": "Parachute Purple",
+        "hex": "#342852",
+        "hsl": { "h": 257, "s": 34, "l": 24 },
+        "rgb": { "r": 57, "g": 40, "b": 82 }
+      },
+      {
+        "name": "Rich Red Violet",
+        "hex": "#783650",
+        "hsl": { "h": 336, "s": 38, "l": 34 },
+        "rgb": { "r": 124, "g": 54, "b": 81 }
+      },
+      {
+        "name": "Genestealer Purple",
+        "hex": "#7f62b2",
+        "hsl": { "h": 262, "s": 34, "l": 54 },
+        "rgb": { "r": 119, "g": 97, "b": 171 }
+      }
+    ]
+  },
+  {
+    "name": "Kinda Nice",
+    "id": "5f7aaad2-ffcc-4625-aa33-f087d6f6e027",
+    "date": "01/07/2021, 14:14:22",
+    "colors": [
+      {
+        "name": "Silent Breath",
+        "hex": "#e9f1ed",
+        "hsl": { "h": 150, "s": 22, "l": 93 },
+        "rgb": { "r": 233, "g": 241, "b": 236 }
+      },
+      {
+        "name": "Stately Stems",
+        "hex": "#59786d",
+        "hsl": { "h": 158, "s": 15, "l": 41 },
+        "rgb": { "r": 87, "g": 122, "b": 108 }
+      },
+      {
+        "name": "Cal Poly Pomona Green",
+        "hex": "#1a4d2a",
+        "hsl": { "h": 139, "s": 50, "l": 20 },
+        "rgb": { "r": 30, "g": 77, "b": 43 }
+      },
+      {
+        "name": "BioShock",
+        "hex": "#849806",
+        "hsl": { "h": 68, "s": 92, "l": 31 },
+        "rgb": { "r": 136, "g": 153, "b": 0 }
+      },
+      {
+        "name": "Reddish Grey",
+        "hex": "#9b736f",
+        "hsl": { "h": 6, "s": 18, "l": 52 },
+        "rgb": { "r": 153, "g": 117, "b": 112 }
+      }
+    ]
+  }
+]
