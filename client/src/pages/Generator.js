@@ -1,6 +1,5 @@
 import React from 'react';
 import PaletteGenerator from '../components/PaletteGenerator';
-import '../styles/GeneratorPage.css';
 
 const Generator = () => {
   return (

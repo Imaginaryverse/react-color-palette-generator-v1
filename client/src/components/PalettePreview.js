@@ -3,7 +3,6 @@ import React from 'react';
 const PalettePreview = ({ palette }) => {
   return (
     <article className='palette-preview'>
-      <p>{palette.name}</p>
       <div className='preview-grid'>
         {palette.colors.map(color => (
           <div

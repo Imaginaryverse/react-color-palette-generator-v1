@@ -23,8 +23,14 @@ const ColorCell = ({ color, toggleLocked }) => {
       >
         {color.locked ? 'Unlock' : 'Lock'}
       </button>
-      <p style={textStyle}>{name}</p>
-      <p style={textStyle}>{hex}</p>
+      <div className='info-container'>
+        <p className='info-container__name' style={textStyle}>
+          {name}
+        </p>
+        <p className='info-container__hex' style={textStyle}>
+          {hex}
+        </p>
+      </div>
     </div>
   );
 };

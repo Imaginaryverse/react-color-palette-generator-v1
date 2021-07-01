@@ -8,20 +8,26 @@ const Palettes = () => {
 
   return (
     <section className='page palettes-page'>
-      <h1>Palettes</h1>
+      {/* <h1>Palettes</h1> */}
       {palettes[0] ? (
         <ul className='palettes-list'>
           {palettes.map(palette => (
             <li className='palettes-list__item' key={palette.id}>
-              <Link to={`/palettes/${palette.id}`}>
+              <div className='palette-info-container'>
+                <p className='palette-info-container__name'>{palette.name}</p>
+                <button
+                  className='btn delete-btn'
+                  onClick={() => deletePalette(palette.id)}
+                >
+                  Delete
+                </button>
+              </div>
+              <Link
+                className='link palette-preview-link'
+                to={`/palettes/${palette.id}`}
+              >
                 <PalettePreview palette={palette} />
               </Link>
-              <button
-                className='btn delete-btn'
-                onClick={() => deletePalette(palette.id)}
-              >
-                Delete
-              </button>
             </li>
           ))}
         </ul>
