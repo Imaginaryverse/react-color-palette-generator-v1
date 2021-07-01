@@ -4,22 +4,6 @@ const fs = require('fs/promises');
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-/* const palettes = [
-  {
-    id: uuid,
-    title: 'Super Mario',
-    colors: [
-      {
-        name: 'Maroon Red',
-        hsl: { hue: num, sat: num, lum: num },
-        hex: 'XXXXXX',
-        rgb: { red: num, green: num, blue:  num }
-      }
-    ],
-    date: new Date.now().toLocaleString(),
-  },
-]; */
-
 const getPalettes = async () => {
   try {
     const data = await fs.readFile('./db/palettes.json');

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { PalettesContext } from '../PalettesContext';
 import generateColor from '../utils/generateColor';
 import ColorCell from './ColorCell';
@@ -31,7 +32,7 @@ const PaletteGenerator = () => {
   const handleSaveClick = () => {
     const paletteToSave = {
       name: 'paletteTitle',
-      id: 'uuid',
+      id: uuidv4(),
       date: new Date().toLocaleString(),
       colors: palette.map(color => color.color),
     };
