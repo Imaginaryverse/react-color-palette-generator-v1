@@ -5,16 +5,20 @@ import fetchPalettes from './utils/fetchPalettes';
 export const PalettesContext = createContext();
 
 export const PalettesProvider = props => {
-  const [palettes, setPalettes] = useState(null);
+  const [palettes, setPalettes] = useState([]);
 
   const addPalette = palette => {
     console.log('in context', palette);
 
-    axios.post('/api/palettes', palette).then(res => console.log(res.data.msg));
+    axios.post('/api/palettes', palette).then(res => setPalettes(res));
   };
 
+  /* const getPalettes = () => {
+    fetchPalettes().then(res => setPalettes(res));
+  }; */
+
   useEffect(() => {
-    if (!palettes) {
+    if (!palettes[0]) {
       fetchPalettes().then(res => setPalettes(res));
     }
 

@@ -84,6 +84,7 @@ const PaletteGenerator = () => {
         <input
           className='palette-form__input'
           type='text'
+          maxLength='25'
           value={paletteName}
           onChange={e => setPaletteName(e.target.value)}
           placeholder='Palette name'
