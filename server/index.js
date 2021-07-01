@@ -6,10 +6,17 @@ const app = express();
 
 /* const palettes = [
   {
-    id: 1,
+    id: uuid,
     title: 'Super Mario',
-    colors: ['hex', 'hex', 'hex', 'hex', 'hex'],
-    date: '30/06/2021',
+    colors: [
+      {
+        name: 'Maroon Red',
+        hsl: { hue: num, sat: num, lum: num },
+        hex: 'XXXXXX',
+        rgb: { red: num, green: num, blue:  num }
+      }
+    ],
+    date: new Date.now().toLocaleString(),
   },
 ]; */
 
