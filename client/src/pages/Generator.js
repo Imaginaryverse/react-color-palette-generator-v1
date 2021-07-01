@@ -1,11 +1,12 @@
 import React from 'react';
-// import axios from 'axios';
+import PaletteGenerator from '../components/PaletteGenerator';
 
 const Generator = () => {
   return (
-    <div>
+    <section className='generator-page'>
       <h1>Generator</h1>
-    </div>
+      <PaletteGenerator />
+    </section>
   );
 };
 
