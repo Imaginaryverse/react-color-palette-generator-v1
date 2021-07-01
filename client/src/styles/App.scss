@@ -324,11 +324,13 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
     &__name {
       margin-bottom: 0.5rem;
+
+      font-weight: bolder;
     }
 
     .delete-btn {
