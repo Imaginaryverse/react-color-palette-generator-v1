@@ -22,7 +22,7 @@ export const PalettesProvider = props => {
       fetchPalettes().then(res => setPalettes(res));
     }
 
-    console.log(palettes);
+    // console.log(palettes);
   }, [palettes]);
 
   return (

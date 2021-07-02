@@ -15,8 +15,6 @@ const PaletteDetails = () => {
   const { id } = useParams();
   const palette = palettes.find(palette => palette.id === id);
 
-  console.log(palette);
-
   return (
     <section className='page palette-details-page'>
       <h1 className='palette-details-title'>
