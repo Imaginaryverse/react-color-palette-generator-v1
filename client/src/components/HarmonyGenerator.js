@@ -93,12 +93,6 @@ const HarmonyGenerator = () => {
 
   return (
     <section className='harmony-generator'>
-      {/* <div
-        className='primary-color-preview'
-        style={{
-          backgroundColor: formatHsl(primaryHue, primarySat, primaryLum),
-        }}
-      ></div> */}
       <PrimaryForm
         primaryHue={primaryHue}
         primarySat={primarySat}
