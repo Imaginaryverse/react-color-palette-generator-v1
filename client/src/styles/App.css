@@ -66,7 +66,7 @@ body {
 .navbar {
   height: 60px;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1440px;
   position: fixed;
   z-index: 10;
   display: flex;
@@ -107,7 +107,7 @@ body {
 .palette-generator {
   height: 100%;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -235,7 +235,7 @@ body {
 .palettes-list {
   height: 100%;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -314,7 +314,7 @@ body {
 .details-list {
   height: auto;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -384,7 +384,7 @@ body {
 .harmony-generator {
   height: 100%;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
