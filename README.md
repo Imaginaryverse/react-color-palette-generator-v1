@@ -6,4 +6,6 @@ This application lets users create their own custom color palettes and save them
 
 There is still a lot of work, features and fine tuning to be done.
 
+Also, there are a few palettes included in the repo at the moment.
+
 Enjoy!
